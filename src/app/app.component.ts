@@ -28,7 +28,24 @@ export class AppComponent {
 
   onMenu(menu:number) {
     this.menuSelected = menu;
-    this.router.navigateByUrl(`admin-user-list-page`)
+
+    switch(menu){
+
+      case 1:
+        this.router.navigateByUrl(`admin-user-list-page`)
+        break;
+      case 2: 
+        this.router.navigateByUrl(`doctor-list-page`)  
+        break;
+      case 3: 
+        this.router.navigateByUrl(`subscriber-list-page`)  
+        break;
+      case 4: 
+        this.router.navigateByUrl(`booking-list-page`)  
+        break;
+    }
+
+    
   }
 
 }
