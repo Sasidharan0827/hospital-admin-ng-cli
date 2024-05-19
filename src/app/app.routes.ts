@@ -11,58 +11,100 @@ import { SubscriberUpdatePageComponent } from './subscriber/subscriber-update-pa
 import { BookingListPageComponent } from './booking/booking-list-page/booking-list-page.component';
 import { BookingAddPageComponent } from './booking/booking-add-page/booking-add-page.component';
 import { BookingUpdatePageComponent } from './booking/booking-update-page/booking-update-page.component';
+import { LoginComponent } from './login/login.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
 
 export const routes: Routes = [
     {
-        path:'admin-user-list-page',
-        component:AdminUserListPageComponent
+        path:'login',
+        component:LoginComponent
     },
+    
     {
-        path:'admin-user-add-page',
-        component:AdminUserAddPageComponent
-    },
-    {
-        path:'admin-user-update-page',
-        component:AdminUserUpdatePageComponent
+        path:'xyz',
+        component:LoginComponent
     },
 
+    { path: 'home/admin-user-list-page', redirectTo: '/home/(home:admin-user-list-page)' }, // Redirect to named outlet
+    
     {
-        path:'doctor-list-page',
-        component:DoctorListPageComponent
-    },
-    {
-        path:'doctor-add-page',
-        component:DoctorAddPageComponent
-    },
-    {
-        path:'doctor-update-page',
-        component:DoctorUpdatePageComponent
-    },
+        path:'home',
+        component:MainNavComponent,
+        children: [
+            {
+                outlet: 'home',
+                path:'admin-user-list-page',
+                component:AdminUserListPageComponent,
 
-    {
-        path:'subscriber-list-page',
-        component:SubscriberListPageComponent
-    },
-    {
-        path:'subscriber-add-page',
-        component:SubscriberAddPageComponent
-    },
-    {
-        path:'subscriber-update-page',
-        component:SubscriberUpdatePageComponent
-    },
+            },
+        
+            {
+                path:'admin-user-add-page',
+                component:AdminUserAddPageComponent,
+                outlet: 'home'
 
+            },
+            {
+                path:'admin-user-update-page',
+                component:AdminUserUpdatePageComponent,
+                outlet: 'home'
 
-    {
-        path:'booking-list-page',
-        component:BookingListPageComponent
-    },
-    {
-        path:'booking-add-page',
-        component:BookingAddPageComponent
-    },
-    {
-        path:'booking-update-page',
-        component:BookingUpdatePageComponent
-    }
+            },
+        
+            {
+                path:'doctor-list-page',
+                component:DoctorListPageComponent,
+                outlet: 'home'
+            },
+            {
+                path:'doctor-add-page',
+                component:DoctorAddPageComponent,
+                outlet: 'home'
+            },
+            {
+                path:'doctor-update-page',
+                component:DoctorUpdatePageComponent,
+                outlet: 'home'
+            },
+        
+            {
+                path:'subscriber-list-page',
+                component:SubscriberListPageComponent,
+                outlet: 'home'
+            },
+            {
+                path:'subscriber-add-page',
+                component:SubscriberAddPageComponent,
+                outlet: 'home'
+            },
+            {
+                path:'subscriber-update-page',
+                component:SubscriberUpdatePageComponent,
+                outlet: 'home'
+            },
+        
+        
+            {
+                path:'booking-list-page',
+                component:BookingListPageComponent,
+                outlet: 'home'
+            },
+            {
+                path:'booking-add-page',
+                component:BookingAddPageComponent,
+                outlet: 'home'
+            },
+            {
+                path:'booking-update-page',
+                component:BookingUpdatePageComponent,
+                outlet: 'home'
+            }
+        ]
+
+    },    
+    
+
+    
+
+   
 ];

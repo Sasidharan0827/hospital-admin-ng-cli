@@ -20,12 +20,13 @@ export class AdminUserListPageComponent {
   constructor(private router:Router) {}
 
   onAddAdminUser() {
-    this.router.navigateByUrl(`admin-user-add-page`);
+    let url = `home/(home:admin-user-update-page)`;
+    this.router.navigateByUrl(url);
   }
 
   onEditAdminUser(userId:number) {
 
-    let url = `admin-user-update-page?userId=${userId}`;
+    let url = `home/(home:admin-user-update-page)?userId=${userId}`;
     this.router.navigateByUrl(url);
   }
 

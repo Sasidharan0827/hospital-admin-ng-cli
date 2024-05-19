@@ -1,1 +1,39 @@
-<p>doctor-list-page works!</p>
+<div class="container">
+  <div class="search-container">
+    <input
+      class="search-box"
+      type="text"
+      placeholder="Search doctors..."
+      name="searchText"
+      [(ngModel)]="searchText"
+      (ngModelChange)="onSearchTextChange()"
+    />
+  </div>
+
+  <div class="body-container">
+    <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email Id</th>
+            <th>Specialist</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          @for( doctor of doctors; track doctor.id) {
+            <tr>
+                <td>{{ doctor.id }}</td>
+                <td>{{ doctor.name }}</td>
+                <td>{{ doctor.emailId }}</td>
+                <td>{{doctor.speciality}}</td>
+              </tr>
+          }  
+
+        </tbody>
+      </table>
+  </div>
+
+</div>
+

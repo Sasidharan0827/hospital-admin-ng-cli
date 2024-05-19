@@ -1,37 +1,7 @@
+
+
 <div class="container">
-  <div class="nav-section">
-    <div class="nav-header-section">
-      <div class="title">
-        Sasi
-      </div>
-    </div>
-    <div class="nav-menu-section">
-      <div class="menu-item" (click)="onMenu(1)" [class.selected-menu]="menuSelected == 1" >
-        <div class="menu-name"  >Admin Users</div>
-      </div>
 
-      <div class="menu-item" (click)="onMenu(2)" [class.selected-menu]="menuSelected == 2">
-        <div class="menu-name" >Doctors</div>
-      </div>
+  <router-outlet></router-outlet>
 
-      <div class="menu-item" (click)="onMenu(3)" [class.selected-menu]="menuSelected == 3">
-        <div class="menu-name" >Subscribers</div>
-      </div>
-
-      <div class="menu-item" (click)="onMenu(4)" [class.selected-menu]="menuSelected == 4">
-        <div class="menu-name" >Booking Appointments</div>
-      </div>
-
-      <!-- @for (item of menus; track item.id ) {
-        <div class="menu-item">
-          <div class="menu-name">Place holder for new menu</div>
-        </div>
-      } -->
-    </div>
-
-    <div class="nav-footer-section"></div>
-  </div>
-  <div class="main-section">
-    <router-outlet></router-outlet>
-  </div>
 </div>
